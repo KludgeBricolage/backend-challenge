@@ -3,7 +3,7 @@ var getUser = require('./user');
 var kue = require('kue-scheduler'),
     Queue = kue.createQueue();
 
-const schedTwoMins = '*/5 * * * * *' // https://crontab.guru/every-2-minutes
+const schedTwoMins = '*/2 * * * *' // https://crontab.guru/every-2-minutes
 var job = Queue.createJob('userCont')
             .attempts(10).removeOnComplete('true');
 
